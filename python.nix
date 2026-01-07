@@ -10,6 +10,7 @@
 
 let
   packageOverrides = self: super: {
+    inherit gitlint;
     # HACK: Zephyr uses pypi to install non-Python deps
     clang-format = clang-tools;
 

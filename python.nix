@@ -30,10 +30,6 @@ let
         python3Packages = self;
       } else super.imgtool;
 
-      jsonschema =
-      if pkgs ? jsonschema then pkgs.jsonschema.override {
-        python3Packages = self;
-      } else super.jsonschema;
 
     # Upstream bug. Bz is not a valid pypi package.
     bz = null;

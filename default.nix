@@ -34,6 +34,7 @@ in {
   pythonEnv = callPackage ./python.nix {
     inherit zephyr-src;
     inherit pyproject-nix;
+    extraPackages=[jsonschema];
   };
 
   openocd-zephyr = openocd.overrideAttrs(old: let

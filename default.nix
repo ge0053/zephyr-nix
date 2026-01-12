@@ -6,7 +6,8 @@
 , gcc_multi
 , autoreconfHook
 , fetchFromGitHub
-, python310
+, python310,
+ python3Packages
 }:
 
 lib.makeScope newScope (self: let
@@ -34,6 +35,7 @@ in {
   pythonEnv = callPackage ./python.nix {
     inherit zephyr-src;
     inherit pyproject-nix;
+    extraPackages=_ps : [python3Packages.jsonschema];
   };
 
   openocd-zephyr = openocd.overrideAttrs(old: let

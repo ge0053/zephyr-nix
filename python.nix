@@ -5,7 +5,7 @@
 , gitlint
 , lib
 , extraPackages ? _ps: [ ]
-, pkgs
+, pkgs 
 }:
 
 let
@@ -29,6 +29,7 @@ let
       if pkgs ? mcuboot-imgtool then pkgs.mcuboot-imgtool.override {
         python3Packages = self;
       } else super.imgtool;
+
 
     # Upstream bug. Bz is not a valid pypi package.
     bz = null;
